@@ -1,0 +1,14 @@
+.btn-primary {
+    background-color: green;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;  /* Optional: this ensures the header stays on top of other elements */
+}
+
+body {
+    padding-top: 10px; /* Adjust this to the height of your header */
+}

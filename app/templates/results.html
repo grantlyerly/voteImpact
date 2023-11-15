@@ -1,0 +1,243 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="display-4 mb-4">Displaying Data:</h1>
+    <div class="row">
+        <!-- Column for Pres1 -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Zip1: {{ state1 }} - {{ cd1 }}</h2>
+                    <h3 class="card-subtitle mb-3">Pres Data</h3>
+                    {% if pres1 %}
+                        <p class="card-text">Year: {{ pres1.year }}</p>
+                        <p class="card-text">State: {{ pres1.state }}</p>
+                        <p class="card-text">Total Votes: {{ pres1.totalVotes }}</p>
+                        <p class="card-text">Margin: {{ pres1.margin }}</p>
+                        <p class="card-text">Winner: {{ pres1.winner }}</p>
+                        <p class="card-text">EVs: {{ pres1.ev }}</p>
+                        <p class="card-text">Power: {{ pres1.power }}</p>
+                    {% else %}
+                        <p class="card-text">No data found.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Column for Pres2 -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Zip2: {{ state2 }} - {{ cd2 }}</h2>
+                    <h3 class="card-subtitle mb-3">Pres Data</h3>
+                    {% if pres2 %}
+                        <p class="card-text">Year: {{ pres2.year }}</p>
+                        <p class="card-text">State: {{ pres2.state }}</p>
+                        <p class="card-text">Total Votes: {{ pres2.totalVotes }}</p>
+                        <p class="card-text">Margin: {{ pres2.margin }}</p>
+                        <p class="card-text">Winner: {{ pres2.winner }}</p>
+                        <p class="card-text">EVs: {{ pres2.ev }}</p>
+                        <p class="card-text">Power: {{ pres2.power }}</p>
+                    {% else %}
+                        <p class="card-text">No data found.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Power comparison progress bar -->
+    {% if pres2 or pres2 %}
+    <div class="progress mt-4">
+        <div id="zip1ProgressBar" class="progress-bar bg-success" role="progressbar" aria-valuemin="0" aria-valuemax="100">Zip1</div>
+        <div id="zip2ProgressBar" class="progress-bar bg-danger" role="progressbar" aria-valuemin="0" aria-valuemax="100">Zip2</div>
+    </div>
+    {% endif %}
+    
+    <!-- Senate section -->
+    <div class="row mt-4">
+        <!-- Column for Sen1 -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-subtitle mb-3">Senate Data</h3>
+                    {% if sen1 %}
+                        <p class="card-text">Year: {{ sen1.year }}</p>
+                        <p class="card-text">State: {{ sen1.state }}</p>
+                        <p class="card-text">Total Votes: {{ sen1.totalVotes }}</p>
+                        <p class="card-text">Margin: {{ sen1.margin }}</p>
+                        <p class="card-text">Winner: {{ sen1.winner }}</p>
+                        <p class="card-text">Power: {{ sen1.power }}</p>
+                        <p class="card-text">Type: {{ sen1.special }}</p>
+                    {% else %}
+                        <p class="card-text">No data found.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Column for Sen2 -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-subtitle mb-3">Senate Data</h3>
+                    {% if sen2 %}
+                        <p class="card-text">Year: {{ sen2.year }}</p>
+                        <p class="card-text">State: {{ sen2.state }}</p>
+                        <p class="card-text">Total Votes: {{ sen2.totalVotes }}</p>
+                        <p class="card-text">Margin: {{ sen2.margin }}</p>
+                        <p class="card-text">Winner: {{ sen2.winner }}</p>
+                        <p class="card-text">Power: {{ sen2.power }}</p>
+                        <p class="card-text">Type: {{ sen2.special }}</p>
+                    {% else %}
+                        <p class="card-text">No data found.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <!-- Column for Sen1 -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-subtitle mb-3">Senate Special Data</h3>
+                    {% if senspecial1 %}
+                        <p class="card-text">Year: {{ senspecial1.year }}</p>
+                        <p class="card-text">State: {{ senspecial1.state }}</p>
+                        <p class="card-text">Total Votes: {{ senspecial1.totalVotes }}</p>
+                        <p class="card-text">Margin: {{ senspecial1.margin }}</p>
+                        <p class="card-text">Winner: {{ senspecial1.winner }}</p>
+                        <p class="card-text">Power: {{ senspecial1.power }}</p>
+                        <p class="card-text">Type: {{ senspecial1.special }}</p>
+                    {% else %}
+                        <p class="card-text">No data found.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Column for SenSpecial2 -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-subtitle mb-3">Senate Special Data</h3>
+                    {% if senspecial2 %}
+                        <p class="card-text">Year: {{ senspecial2.year }}</p>
+                        <p class="card-text">State: {{ senspecial2.state }}</p>
+                        <p class="card-text">Total Votes: {{ senspecial2.totalVotes }}</p>
+                        <p class="card-text">Margin: {{ senspecial2.margin }}</p>
+                        <p class="card-text">Winner: {{ senspecial2.winner }}</p>
+                        <p class="card-text">Power: {{ senspecial2.power }}</p>
+                        <p class="card-text">Type: {{ senspecial2.special }}</p>
+                    {% else %}
+                        <p class="card-text">No data found.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- House section -->
+    <div class="row mt-4">
+        <!-- Column for House1 -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-subtitle mb-3">House Data</h3>
+                    {% if house1 %}
+                        <p class="card-text">Year: {{ house1.year }}</p>
+                        <p class="card-text">State: {{ house1.state }}</p>
+                        <p class="card-text">Total Votes: {{ house1.totalVotes }}</p>
+                        <p class="card-text">Margin: {{ house1.margin }}</p>
+                        <p class="card-text">Winner: {{ house1.winner }}</p>
+                        <p class="card-text">Power: {{ house1.power }}</p>
+                        <p class="card-text">Type: {{ house1.special }}</p>
+                    {% else %}
+                        <p class="card-text">No data found.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Column for Sen2 -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-subtitle mb-3">House Data</h3>
+                    {% if house2 %}
+                        <p class="card-text">Year: {{ house2.year }}</p>
+                        <p class="card-text">State: {{ house2.state }}</p>
+                        <p class="card-text">Total Votes: {{ house2.totalVotes }}</p>
+                        <p class="card-text">Margin: {{ house2.margin }}</p>
+                        <p class="card-text">Winner: {{ house2.winner }}</p>
+                        <p class="card-text">Power: {{ house2.power }}</p>
+                        <p class="card-text">Type: {{ house2.special }}</p>
+                    {% else %}
+                        <p class="card-text">No data found.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <!-- Column for Sen1 -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-subtitle mb-3">House Special Data</h3>
+                    {% if housespecial1 %}
+                        <p class="card-text">Year: {{ housespecial1.year }}</p>
+                        <p class="card-text">State: {{ housespecial1.state }}</p>
+                        <p class="card-text">Total Votes: {{ housespecial1.totalVotes }}</p>
+                        <p class="card-text">Margin: {{ housespecial1.margin }}</p>
+                        <p class="card-text">Winner: {{ housespecial1.winner }}</p>
+                        <p class="card-text">Power: {{ housespecial1.power }}</p>
+                        <p class="card-text">Type: {{ housespecial1.special }}</p>
+                    {% else %}
+                        <p class="card-text">No data found.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Column for SenSpecial2 -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-subtitle mb-3">House Special Data</h3>
+                    {% if housespecial2 %}
+                        <p class="card-text">Year: {{ housespecial2.year }}</p>
+                        <p class="card-text">State: {{ housespecial2.state }}</p>
+                        <p class="card-text">Total Votes: {{ housespecial2.totalVotes }}</p>
+                        <p class="card-text">Margin: {{ housespecial2.margin }}</p>
+                        <p class="card-text">Winner: {{ housespecial2.winner }}</p>
+                        <p class="card-text">Power: {{ housespecial2.power }}</p>
+                        <p class="card-text">Type: {{ housespecial2.special }}</p>
+                    {% else %}
+                        <p class="card-text">No data found.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back Button -->
+    <form action="/" class="mt-3">
+        <input type="submit" value="Back" class="btn btn-primary">
+    </form>
+</div>
+
+<script>
+    // Convert powerPercent from decimal to percentage
+    var power1Percent = parseFloat('{{ pres1.powerPercent }}') * 100;
+    var power2Percent = parseFloat('{{ pres2.powerPercent }}') * 100;
+
+    // Set progress bar widths
+    document.getElementById('zip1ProgressBar').style.width = power1Percent + "%";
+    document.getElementById('zip2ProgressBar').style.width = power2Percent + "%";
+</script>
+{% endblock %}

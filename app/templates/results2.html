@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="display-4 mb-4">Displaying Data:</h1>
+
+    <div class="row">
+        <!-- Column for Pres1 -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Data from {{ yr4 }} and {{ yr8 }} in {{state1}}</h2>
+                    <h3 class="card-subtitle mb-3">Pres Data for election in {{ year }}</h3>
+                    {% if pres1_1 %}
+                        <p class="card-text">4 years ago</p>
+                        <p class="card-text">Winner: {{ pres1_1.winner }}</p>
+                        <p class="card-text">Power: {{ pres1_1.power }}</p>
+                    {% else %}
+                        <p class="card-text">No data found.</p>
+                    {% endif %}
+                    {% if pres2_1 %}
+                        <p class="card-text"></p>8 years ago</p>
+                        <p class="card-text">Winner: {{ pres2_1.winner }}</p>
+                        <p class="card-text">Power: {{ pres2_1.power }}</p>
+                    {% else %}
+                        <p class="card-text">No data found.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-subtitle mb-3">Sen Data for election in {{ year }}</h3>
+                    {% if sen1_1 %}
+                        <p class="card-text">6 years ago</p>
+                        <p class="card-text">Winner: {{ sen1_1.winner }}</p>
+                        <p class="card-text">Power: {{ sen1_1.power }}</p>
+                    {% else %}
+                        <p class="card-text">No data found.</p>
+                    {% endif %}
+                    {% if sen2_1 %}
+                        <p class="card-text"></p>12 years ago</p>
+                        <p class="card-text">Winner: {{ sen2_1.winner }}</p>
+                        <p class="card-text">Power: {{ sen2_1.power }}</p>
+                    {% else %}
+                        <p class="card-text">No data found.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-subtitle mb-3">House Data for election in {{ year }}</h3>
+                    {% if house1_1 %}
+                        <p class="card-text">2 years ago</p>
+                        <p class="card-text">Winner: {{ house1_1.winner }}</p>
+                        <p class="card-text">Power: {{ house1_1.power }}</p>
+                    {% else %}
+                        <p class="card-text">No data found.</p>
+                    {% endif %}
+                    {% if house2_1 %}
+                        <p class="card-text"></p>4 years ago</p>
+                        <p class="card-text">Winner: {{ house2_1.winner }}</p>
+                        <p class="card-text">Power: {{ house2_1.power }}</p>
+                    {% else %}
+                        <p class="card-text">No data found.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Column for Pres1 -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Data from {{ yr4 }} and {{ yr8 }} in {{state2}}</h2>
+                    <h3 class="card-subtitle mb-3">Pres Data for election in {{ year }}</h3>
+                    {% if pres1_2 %}
+                        <p class="card-text">4 years ago</p>
+                        <p class="card-text">Winner: {{ pres1_2.winner }}</p>
+                        <p class="card-text">Power: {{ pres1_2.power }}</p>
+                    {% else %}
+                        <p class="card-text">No data found.</p>
+                    {% endif %}
+                    {% if pres2_2 %}
+                        <p class="card-text"></p>8 years ago</p>
+                        <p class="card-text">Winner: {{ pres2_2.winner }}</p>
+                        <p class="card-text">Power: {{ pres2_2.power }}</p>
+                    {% else %}
+                        <p class="card-text">No data found.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-subtitle mb-3">Sen Data for election in {{year}}</h3>
+                    {% if sen1_2 %}
+                        <p class="card-text">6 years ago</p>
+                        <p class="card-text">Winner: {{ sen1_2.winner }}</p>
+                        <p class="card-text">Power: {{ sen1_2.power }}</p>
+                    {% else %}
+                        <p class="card-text">No data found.</p>
+                    {% endif %}
+                    {% if sen2_2 %}
+                        <p class="card-text"></p>12 years ago</p>
+                        <p class="card-text">Winner: {{ sen2_2.winner }}</p>
+                        <p class="card-text">Power: {{ sen2_2.power }}</p>
+                    {% else %}
+                        <p class="card-text">No data found.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-subtitle mb-3">House Data for election in {{year}}</h3>
+                    {% if house1_2 %}
+                        <p class="card-text">2 years ago</p>
+                        <p class="card-text">Winner: {{ house1_2.winner }}</p>
+                        <p class="card-text">Power: {{ house1_2.power }}</p>
+                    {% else %}
+                        <p class="card-text">No data found.</p>
+                    {% endif %}
+                    {% if house2_2 %}
+                        <p class="card-text"></p>4 years ago</p>
+                        <p class="card-text">Winner: {{ house2_2.winner }}</p>
+                        <p class="card-text">Power: {{ house2_2.power }}</p>
+                    {% else %}
+                        <p class="card-text">No data found.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
